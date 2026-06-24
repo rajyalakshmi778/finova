@@ -1,5 +1,9 @@
 function Transactions() {
-  return <h1>Transactions</h1>;
+  return (
+    <div>
+      <h1>Transactions Page</h1>
+    </div>
+  );
 }
 
 export default Transactions;
