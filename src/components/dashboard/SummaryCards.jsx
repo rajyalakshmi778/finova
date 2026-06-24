@@ -5,37 +5,95 @@ function SummaryCards({
   savingsRate,
 }) {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-      <div className="bg-white rounded-xl border-l-4 border-[#021024] border border-slate-200 p-6">
-        <p className="text-slate-500">Total Balance</p>
-        <h2 className="text-2xl font-bold mt-2">
+    <section className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+
+      {/* Balance Card */}
+      <div className="lg:col-span-2 bg-[#052659] rounded-3xl p-8 text-white shadow-lg">
+        <p className="text-[#C1E8FF] text-sm uppercase tracking-wide">
+          Total Balance
+        </p>
+
+        <h2 className="text-5xl font-bold mt-3">
           ₹{balance.toLocaleString()}
         </h2>
+
+        <p className="mt-4 text-[#C1E8FF]">
+          Available balance across all finances
+        </p>
       </div>
 
-      <div className="bg-white rounded-xl border-l-4 border-[#052659] border border-slate-200 p-6">
-        <p className="text-slate-500">Total Income</p>
-        <h2 className="text-2xl font-bold mt-2">
+      {/* Income */}
+      <div className="bg-white rounded-3xl border border-[#C1E8FF] p-6 shadow-sm hover:shadow-md transition-all">
+        <div className="flex items-center justify-between">
+          <p className="text-slate-500">
+            Income
+          </p>
+
+          <span className="text-green-600 text-xl">
+            ↗
+          </span>
+        </div>
+
+        <h3 className="text-3xl font-bold text-[#021024] mt-4">
           ₹{income.toLocaleString()}
-        </h2>
+        </h3>
+
+        <p className="text-sm text-slate-400 mt-3">
+          Total earnings
+        </p>
       </div>
 
-      <div className="bg-white rounded-xl border-l-4 border-[#5483B3] border border-slate-200 p-6">
-        <p className="text-slate-500">Total Expenses</p>
-        <h2 className="text-2xl font-bold mt-2">
+      {/* Expense */}
+      <div className="bg-white rounded-3xl border border-[#C1E8FF] p-6 shadow-sm hover:shadow-md transition-all">
+        <div className="flex items-center justify-between">
+          <p className="text-slate-500">
+            Expenses
+          </p>
+
+          <span className="text-red-500 text-xl">
+            ↘
+          </span>
+        </div>
+
+        <h3 className="text-3xl font-bold text-[#021024] mt-4">
           ₹{expense.toLocaleString()}
-        </h2>
+        </h3>
+
+        <p className="text-sm text-slate-400 mt-3">
+          Total spending
+        </p>
       </div>
 
-      <div className="bg-white rounded-xl border-l-4 border-[#7DA0CA] border border-slate-200 p-6">
-        <p className="text-slate-500">Savings Rate</p>
+      {/* Savings Rate */}
+      <div className="bg-white rounded-3xl border border-[#C1E8FF] p-6 shadow-sm hover:shadow-md transition-all">
+        <div className="flex items-center justify-between">
+          <p className="text-slate-500">
+            Savings Rate
+          </p>
 
-        <h2 className="text-2xl font-bold text-[#052659] mt-2">
+          <span className="text-[#5483B3] text-xl">
+            💰
+          </span>
+        </div>
+
+        <h3 className="text-3xl font-bold text-[#052659] mt-4">
           {savingsRate}%
-        </h2>
+        </h3>
 
-        <p className="text-sm text-slate-400 mt-2">
-          Based on your transactions
+        <div className="mt-4 w-full bg-[#C1E8FF] rounded-full h-2">
+          <div
+            className="bg-[#5483B3] h-2 rounded-full"
+            style={{
+              width: `${Math.min(
+                savingsRate,
+                100
+              )}%`,
+            }}
+          />
+        </div>
+
+        <p className="text-sm text-slate-400 mt-3">
+          Monthly efficiency
         </p>
       </div>
     </section>
