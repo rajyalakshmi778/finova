@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   FiHome,
   FiCreditCard,
@@ -17,20 +19,26 @@ function Sidebar() {
       </h1>
 
       <nav className="space-y-3">
-        <div className="flex items-center gap-3 p-3 rounded-xl text-white/80 hover:bg-white hover:text-[#021024] transition-all duration-200 cursor-pointer">
-          <FiHome />
-          Dashboard
-        </div>
+        <Link
+  to="/dashboard"
+  className="flex items-center gap-3 p-3 rounded-xl text-white/80 hover:bg-white hover:text-[#021024] transition-all duration-200"
+>
+  <FiHome />
+  Dashboard
+</Link>
 
         <div className="flex items-center gap-3 p-3 rounded-xl text-white/80 hover:bg-white hover:text-[#021024] transition-all duration-200 cursor-pointer">
           <FiCreditCard />
           Accounts
         </div>
 
-        <div className="flex items-center gap-3 p-3 rounded-xl text-white/80 hover:bg-white hover:text-[#021024] transition-all duration-200 cursor-pointer">
-          <FiPieChart />
-          Transactions
-        </div>
+       <Link
+  to="/transactions"
+  className="flex items-center gap-3 p-3 rounded-xl text-white/80 hover:bg-white hover:text-[#021024] transition-all duration-200"
+>
+  <FiPieChart />
+  Transactions
+</Link>
 
       <div className="flex items-center gap-3 p-3 rounded-xl text-white/80 hover:bg-white hover:text-[#021024] transition-all duration-200 cursor-pointer">
           Goals
